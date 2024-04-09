@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Sugestões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Caixa de Sugestões Online</h2>
+    <form id="suggestionForm" action="#" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="suggestion">Sugestão/Comentário:</label>
+        <textarea id="suggestion" name="suggestion" rows="4" required></textarea>
+
+        <input type="submit" value="Enviar Sugestão">
+    </form>
+    <div id="confirmation" style="display: none; text-align: center; margin-top: 20px;">
+        Obrigado pela sua sugestão!
+    </div>
+</div>
+
+<script>
+    document.getElementById("suggestionForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Previne o envio padrão do formulário
+
+        // Poderia ser implementada aqui uma lógica para enviar os dados via AJAX ou salvar em um banco de dados
+
+        // Exibe a mensagem de confirmação
+        document.getElementById("suggestionForm").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+    });
+</script>
+
+</body>
+</html>
